@@ -61,7 +61,7 @@ jobs:
         run: npm run build
         env:
           VITE_APP_NAME: Release Board V1
-          VITE_PORT: "4173"
+          VITE_PORT: "4273"
           VITE_NODE_ENV: staging
           VITE_LOG_LEVEL: info
           VITE_FEATURE_X_ENABLED: "false"
@@ -104,7 +104,7 @@ jobs:
         run: npm run validate:env
         env:
           VITE_APP_NAME: Release Board V1
-          VITE_PORT: "4173"
+          VITE_PORT: "4273"
           VITE_NODE_ENV: staging
           VITE_LOG_LEVEL: info
           VITE_FEATURE_X_ENABLED: "false"
@@ -118,7 +118,7 @@ jobs:
         run: npm run build
         env:
           VITE_APP_NAME: Release Board V1
-          VITE_PORT: "4173"
+          VITE_PORT: "4273"
           VITE_NODE_ENV: staging
           VITE_LOG_LEVEL: info
           VITE_FEATURE_X_ENABLED: "false"
