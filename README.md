@@ -1,6 +1,6 @@
-# 🚀 Release Board V1 - Gestión profesional de configuración y secretos
+#  Release Board V1 - Gestión profesional de configuración y secretos
 
-## 🧭 Propósito
+##  Propósito
 
 Este proyecto es una aplicación web mínima desarrollada con **React + Vite** cuyo objetivo es demostrar prácticas profesionales de:
 
@@ -13,7 +13,7 @@ Este proyecto es una aplicación web mínima desarrollada con **React + Vite** c
 
 Este proyecto forma parte de una actividad académica orientada a simular un entorno real de desarrollo.
 
-## 🧱 Tecnologías utilizadas
+##  Tecnologías utilizadas
 
 - React  
 - Vite  
@@ -23,9 +23,9 @@ Este proyecto forma parte de una actividad académica orientada a simular un ent
 - GitHub Pages  
 - dotenv  
 
-## ⚙️ Configuración vs Secretos
+##  Configuración vs Secretos
 
-### 🔹 Configuración (no sensible)
+###  Configuración (no sensible)
 
 Son parámetros que pueden cambiar entre entornos sin representar riesgo:
 
@@ -39,7 +39,7 @@ Son parámetros que pueden cambiar entre entornos sin representar riesgo:
 
 Estas variables pueden ser usadas por la aplicación y mostradas en la interfaz.
 
-### 🔴 Secretos (sensibles)
+###  Secretos (sensibles)
 
 Son datos que **NO deben almacenarse en el repositorio ni exponerse**:
 
@@ -49,7 +49,7 @@ Son datos que **NO deben almacenarse en el repositorio ni exponerse**:
 
 En este proyecto son simulados y se usan únicamente para validar buenas prácticas.
 
-## 📦 Variables requeridas
+##  Variables requeridas
 
 ### Variables públicas (VITE_*)
 
@@ -63,7 +63,7 @@ VITE_PUBLIC_ENVIRONMENT=local
 VITE_PUBLIC_VERSION=dev-local
 ```
 
-### 🔐 Secretos simulados
+###  Secretos simulados
 
 ```env
 DB_PASSWORD=change_me_password
@@ -71,13 +71,13 @@ API_KEY=change_me_api_key
 JWT_SECRET=change_me_jwt_secret
 ```
 
-## 📄 Archivo `.env.example`
+##  Archivo `.env.example`
 
 Este archivo contiene la plantilla de configuración sin datos sensibles.
 
 Sirve como referencia para que cualquier desarrollador pueda configurar su entorno local.
 
-## 🛠️ Configuración local
+##  Configuración local
 
 ### 1. Clonar repositorio
 
@@ -102,7 +102,7 @@ cp .env.example .env
 
 En Windows, copiar manualmente el archivo desde el explorador.
 
-## ▶️ Ejecución del proyecto
+##  Ejecución del proyecto
 
 ```bash
 npm run dev
@@ -112,7 +112,7 @@ Abrir en el navegador:
 http://localhost:5173
 
 
-## ✅ Validación de configuración
+##  Validación de configuración
 
 Este proyecto incluye un script que valida todas las variables requeridas.
 
@@ -124,25 +124,25 @@ npm run validate:env
 
 ### Resultado esperado
 ```bash
-✅ Environment validation passed.
+ Environment validation passed.
 ```
 
 ### En caso de error
 La aplicación fallará con mensajes como:
 ```bash
-❌ Missing required environment variable: JWT_SECRET
+ Missing required environment variable: JWT_SECRET
 ```
 
 
 Esto garantiza que el sistema no arranque con configuración inválida.
 
-## 🏗️ Build del proyecto
+##  Build del proyecto
 
 ```bash
 npm run build
 ```
 
-## 🔒 Seguridad aplicada
+##  Seguridad aplicada
 
 - No se almacenan secretos en el código fuente  
 - `.env` está excluido del repositorio  
@@ -151,7 +151,7 @@ npm run build
 - Los secretos no se exponen en la interfaz  
 - Los secretos no son utilizados por la aplicación frontend, únicamente se validan para simular un entorno real sin exponer información sensible.
 
-## 🚀 Integración continua (CI)
+##  Integración continua (CI)
 
 El proyecto utiliza **GitHub Actions** para:
 
@@ -161,7 +161,7 @@ El proyecto utiliza **GitHub Actions** para:
 - Ejecutar el build  
 - Desplegar el entorno staging en GitHub Pages  
 
-## 🌿 Flujo de trabajo
+##  Flujo de trabajo
 
 El repositorio utiliza las siguientes ramas:
 
@@ -174,7 +174,7 @@ feature → develop → staging
 ```
 
 
-## 🔁 Simulación de cambio profesional
+##  Simulación de cambio profesional
 
 Para esta actividad se simula un cambio controlado de configuración, por ejemplo:
 
@@ -191,7 +191,7 @@ Este cambio debe documentarse mediante:
 - merge  
 - ejecución de pipeline  
 
-## 📁 Estructura del proyecto
+##  Estructura del proyecto
 ```bash
 .
 ├─ .github/
@@ -207,7 +207,7 @@ Este cambio debe documentarse mediante:
 ```
 
 
-## ⚠️ Qué NO debe subirse al repositorio
+##  Qué NO debe subirse al repositorio
 
 - `.env`  
 - `.env.local`  
@@ -215,7 +215,7 @@ Este cambio debe documentarse mediante:
 - API keys reales  
 - contraseñas reales  
 
-## 🎯 Conclusión
+##  Conclusión
 
 Este proyecto demuestra cómo manejar configuración y secretos de forma profesional, asegurando:
 
