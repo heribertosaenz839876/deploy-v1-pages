@@ -29,10 +29,29 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Validate environment variables
+        run: npm run validate:env
+        env:
+          VITE_APP_NAME: Release Board V1
+          VITE_PORT: "5173"
+          VITE_NODE_ENV: development
+          VITE_LOG_LEVEL: debug
+          VITE_FEATURE_X_ENABLED: "true"
+          VITE_PUBLIC_ENVIRONMENT: ci
+          VITE_PUBLIC_VERSION: ${{ github.sha }}
+          DB_PASSWORD: fake_db_password_123
+          API_KEY: fake_api_key_123
+          JWT_SECRET: fake_jwt_secret_123
+
       - name: Build develop preview
         if: github.ref == 'refs/heads/develop' || github.base_ref == 'develop'
         run: npm run build
         env:
+          VITE_APP_NAME: Release Board V1
+          VITE_PORT: "5173"
+          VITE_NODE_ENV: development
+          VITE_LOG_LEVEL: debug
+          VITE_FEATURE_X_ENABLED: "true"
           VITE_PUBLIC_ENVIRONMENT: dev
           VITE_PUBLIC_VERSION: ${{ github.sha }}
           VITE_BASE_PATH: /${{ github.event.repository.name }}/
@@ -41,6 +60,11 @@ jobs:
         if: github.ref == 'refs/heads/staging' || github.base_ref == 'staging'
         run: npm run build
         env:
+          VITE_APP_NAME: Release Board V1
+          VITE_PORT: "4273"
+          VITE_NODE_ENV: staging
+          VITE_LOG_LEVEL: info
+          VITE_FEATURE_X_ENABLED: "false"
           VITE_PUBLIC_ENVIRONMENT: staging
           VITE_PUBLIC_VERSION: ${{ github.sha }}
           VITE_BASE_PATH: /${{ github.event.repository.name }}/
@@ -76,9 +100,28 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Validate environment variables
+        run: npm run validate:env
+        env:
+          VITE_APP_NAME: Release Board V1
+          VITE_PORT: "4273"
+          VITE_NODE_ENV: staging
+          VITE_LOG_LEVEL: info
+          VITE_FEATURE_X_ENABLED: "false"
+          VITE_PUBLIC_ENVIRONMENT: staging
+          VITE_PUBLIC_VERSION: ${{ github.sha }}
+          DB_PASSWORD: fake_db_password_123
+          API_KEY: fake_api_key_123
+          JWT_SECRET: fake_jwt_secret_123
+
       - name: Build staging
         run: npm run build
         env:
+          VITE_APP_NAME: Release Board V1
+          VITE_PORT: "4273"
+          VITE_NODE_ENV: staging
+          VITE_LOG_LEVEL: info
+          VITE_FEATURE_X_ENABLED: "false"
           VITE_PUBLIC_ENVIRONMENT: staging
           VITE_PUBLIC_VERSION: ${{ github.sha }}
           VITE_BASE_PATH: /${{ github.event.repository.name }}/
